@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
             <Text style={{marginBottom: 10}}>Ville: {item.city}</Text>
             <Text style={{marginBottom: 10}}>M²: {item.company}</Text>
             <Text style={{marginBottom: 10}}>Contact: {item.company}</Text>
-            <Text style={{textAlign: 'justify', fontWeight: ''}}>
+            <Text style={{textAlign: 'justify'}}>
               {item.about}
             </Text>
           </View>

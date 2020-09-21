@@ -7,6 +7,7 @@ import {Icon} from 'react-native-elements';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import DetailScreen from '../screens/DetailScreen';
+import FavScreen from '../screens/FavScreen';
 
 const Home = createStackNavigator();
 function HomeStackScreen() {
@@ -36,6 +37,19 @@ function SearchStackScreen() {
   );
 }
 
+const Fav = createStackNavigator();
+function FavStackScreen() {
+  return (
+    <Fav.Navigator>
+      <Fav.Screen
+        name="Favoris"
+        component={FavScreen}
+        options={{headerShown: false}}
+      />
+    </Fav.Navigator>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 function TabsScreen() {
   return (
@@ -53,7 +67,7 @@ function TabsScreen() {
         options={{
           tabBarIcon: ({focused, color}) => {
             return (
-              <Icon name={'home'} type={'material-comunity'} color={color} />
+              <Icon name={'home'} type={'material-community'} color={color} />
             );
           },
         }}
@@ -64,7 +78,26 @@ function TabsScreen() {
         options={{
           tabBarIcon: ({focused, color}) => {
             return (
-              <Icon name={'search'} type={'material-comunity'} color={color} />
+              <Icon
+                name={'magnify'}
+                type={'material-community'}
+                color={color}
+              />
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Favoris"
+        component={FavStackScreen}
+        options={{
+          tabBarIcon: ({focused, color}) => {
+            return (
+              <Icon
+                name={'heart-outline'}
+                type={'material-community'}
+                color={color}
+              />
             );
           },
         }}
